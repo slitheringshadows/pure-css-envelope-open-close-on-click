@@ -43,34 +43,38 @@ input#flap {
   height: 10px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  top: 220px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -30px;  /* Position it below the envelope */
+  left: 0;        /* Align with the envelope */
+  z-index: 1;     /* Ensure it stays below the envelope */
 }
 
 .envelope-container {
   position: relative;
   width: 320px;
   height: 220px;
-  margin: 100px auto;
-  cursor: pointer;
-  margin-bottom: 100px;
   animation: float 3s ease-in-out infinite;
 }
 
 .envelope-shadow {
   position: absolute;
-  background-color: rgba(0,0,0,0.07);
   width: 320px;
   height: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   bottom: -20px;
   left: 0;
 }
 
 .envelope-wrapper {
-    position: relative;
-    animation: float 3s ease-in-out infinite;
+  position: relative;
+  width: 320px;
+  margin: 100px auto;
+  transition: opacity 0.5s ease-out;  /* Add transition for smooth fade out */
+}
+
+.envelope-wrapper.hide {
+  opacity: 0;
+  pointer-events: none;  /* Prevents interaction with hidden elements */
 }
 
 .envelope-back {
@@ -94,14 +98,15 @@ input#flap {
 
 #next-button {
   position: absolute;
-  bottom: 350px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
   margin-top: 0;
   margin-bottom: 0;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: "Brush Script MT";
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;
@@ -144,69 +149,83 @@ input#flap {
   z-index: 5;
 }
 
+#planner h2 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 32px;  /* Adjust size as needed */
+  color: #ff6b6b;   /* Using the same color scheme as the rest of the app */
+  margin-bottom: 20px;
+}
+
+#planner p {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 24px;
+  color: #ff8e53;
+  margin-bottom: 20px;
+}
+
 #planner div {
   margin-top: 10px;
 }
 
 #planner label {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 20px;
   display: block;
   margin-top: 25px;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 
-#planner select, #planner input[type="time"] {
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+#planner select, 
+#planner input[type="time"] {
+    font-family: 'Brush Script MT', cursive;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
-
 
 .heart {
   position: relative;
-  background-color: red;
-  display: inline-block;
-  height: 30px;
-  top: 0;
-  left: 0;
-  transform: rotate(-45deg);
   width: 30px;
+  height: 30px;
+  background-color: #ff4b4b;
+  transform: rotate(45deg);
+  animation: heartBeat 1.2s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #ff4b4b;
+    border-radius: 50%;
+    position: absolute;
 }
   
-.heart:before, .heart:after {
-  content:"";
-  background-color: red;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  width: 30px;
-  }
-  
 .heart:before {
-  top: -15px;
-  left: 0;}
-  
+  left: -15px;
+}
+
 .heart:after {
-  left: 15px;
-  top: 0;}
-  
-@keyframes beat {
+  top: -15px;
+}
+
+@keyframes heartBeat {
   0% {
-    transform: scale(1);
+      transform: rotate(45deg) scale(1);
   }
   25% {
-    transform: scale(1.1);
+      transform: rotate(45deg) scale(1.1);
   }
-  40% {
-    transform: scale(1);
+  50% {
+      transform: rotate(45deg) scale(1);
   }
-  60% {
-    transform: scale(1.1);
+  75% {
+      transform: rotate(45deg) scale(1.1);
   }
   100% {
-    transform: scale(1);
+      transform: rotate(45deg) scale(1);
   }
 }
 
@@ -229,15 +248,16 @@ input#flap {
   background-color: white;
   top: 10px;
   left: 10px;
-  z-index: 2;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* Added this to stack items vertically */
   align-items: center;
   justify-content: center;
-  font-family: 'Brush Script MT', cursive;
   font-size: 25px;
-  transition: 0.1s;
-  transform: translateY(0);
+  font-family: "Brush Script MT";
+  transition: .1s;
+  z-index: 1;
+  cursor: pointer;
+  gap: 20px;  /* Adds space between text and heart */
 }
 
 .card-front {
@@ -307,7 +327,8 @@ input#flap {
   border-radius: 10px;
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: "Brush Script MT";
   cursor: pointer;
   opacity: 1;
   transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;

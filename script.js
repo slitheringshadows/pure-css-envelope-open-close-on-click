@@ -6,16 +6,17 @@ document.getElementById('flap').addEventListener('change', function() {
         setTimeout(function() {
           nextButton.classList.add('show');
         }, 10); // Small delay to trigger the transition
-      }, 100); // 3 seconds delay
+      }, 0); // 3 seconds delay
     } else {
       nextButton.classList.remove('show');
       setTimeout(function() {
         nextButton.style.display = 'none';
-      }, 500); // Match this delay with the CSS transition duration
+      }, 0); // Match this delay with the CSS transition duration
     }
   });
   
   document.getElementById('next-button').addEventListener('click', function() {
+    document.querySelector('.envelope-wrapper').classList.add('hide');
     const envelopeContainer = document.querySelector('.envelope-container');
     const planner = document.getElementById('planner');
     const nextButton = document.getElementById('next-button');
@@ -34,7 +35,7 @@ document.getElementById('flap').addEventListener('change', function() {
         setTimeout(function() {
             planner.style.opacity = 1;
         }, 10);
-    }, 100);
+    }, 500);
   });
 
 document.getElementById('date-form').addEventListener('submit', function(e) {
