@@ -45,7 +45,7 @@ input#flap {
   position: relative;
   width: 320px;
   height: 220px;
-  animation: float 3s ease-in-out infinite;
+  animation: fallIn 1.5s ease-out forwards;  /* Move falling animation here */
 }
 
 .envelope-shadow {
@@ -62,7 +62,7 @@ input#flap {
   position: relative;
   width: 320px;
   margin: 100px auto;
-  transition: opacity 0.5s ease-out;  /* Add transition for smooth fade out */
+  transition: opacity 0.5s ease-out;
 }
 
 .envelope-wrapper.hide {
@@ -140,6 +140,8 @@ input#flap {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
+  width: 60%;  /* Set default width for mobile */
+  max-width: 400px;  /* Increased from default */
 }
 
 #planner h2 {
@@ -166,10 +168,11 @@ input#flap {
 
 #planner select, 
 #planner input[type="time"] {
-  font-family: "Poppins", serif;
-  font-style: normal;
-  padding: 5px;
-  font-size: 16px;
+  width: 80%;  /* Make form elements wider */
+  max-width: 300px;
+  font-family: 'Brush Script MT', cursive;
+  padding: 8px;  /* Slightly increased padding */
+  font-size: 18px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -386,4 +389,28 @@ input#flap {
     font-size: 28px;
     color: #ff8e53;
     margin-bottom: 20px;
+}
+
+@keyframes fallIn {
+    0% {
+        transform: translateY(-100vh) rotate(5deg);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(20px) rotate(-2deg);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Adjust width for larger screens */
+@media screen and (min-width: 768px) {
+    #planner {
+        width: 450px;  /* Fixed width for desktop */
+    }
 }

@@ -88,3 +88,12 @@ document.getElementById('date-form').addEventListener('submit', function(e) {
             alert('There was an error sending your date plan. Please try again!');
         });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for falling animation to complete
+    setTimeout(() => {
+        // Start the floating animation
+        const envelopeContainer = document.querySelector('.envelope-container');
+        envelopeContainer.style.animation = 'float 3s ease-in-out infinite';
+    }, 1500); // 1500ms matches the fallIn animation duration
+});
