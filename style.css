@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  margin-top: 50px auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -130,6 +130,7 @@ input#flap {
 
 #planner label {
   display: block;
+  margin-top: 25px;
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -306,14 +307,14 @@ input#flap {
 .confirmation-gif {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Optional: adds rounded corners */
+    border-radius: 10px;
 }
 
 #confirmation {
     display: none;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    position: fixed; /* Changed to fixed */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
