@@ -61,7 +61,7 @@ input#flap {
 .envelope-wrapper {
   position: relative;
   width: 320px;
-  margin: 100px auto;
+  margin: 50px auto;
   transition: opacity 0.5s ease-out;  /* Add transition for smooth fade out */
 }
 
@@ -127,7 +127,7 @@ input#flap {
 
 #planner {
   margin-top: 0;
-  padding: 25px;
+  padding: 35px;  /* Increased padding */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -140,6 +140,8 @@ input#flap {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
+  width: 50%;  /* Set width relative to viewport */
+  max-width: 400px;  /* Increased from default */
 }
 
 #planner h2 {
@@ -156,22 +158,20 @@ input#flap {
 }
 
 #planner label {
-  font-family: "Poppins", serif;
-  font-style: normal;
-  font-size: 16px;
+  font-size: 20px;  /* Slightly larger font size */
+  margin-top: 20px;
   display: block;
-  margin-top: 25px;
-  margin-bottom: 5px;
 }
 
 #planner select, 
 #planner input[type="time"] {
-  font-family: "Poppins", serif;
-  font-style: normal;
-  padding: 5px;
-  font-size: 16px;
+  width: 100%;  /* Make form elements wider */
+  max-width: 200px;
+  padding: 10px;  /* Increased padding for better touch targets */
+  font-size: 18px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  margin: 10px auto;  /* Added margin for spacing */
 }
 
 .heart {
@@ -449,4 +449,20 @@ input#flap {
     border-width: 5px;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
+}
+
+.popup {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 107, 107, 0.95);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }

@@ -94,9 +94,25 @@ document.getElementById('date-form').addEventListener('submit', function(e) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const envelopeContainer = document.querySelector('.envelope-container');
+    const popup = document.getElementById('popup-message');
     
     // Wait for falling animation to complete
     setTimeout(() => {
+        // Show popup
+        popup.classList.remove('hidden');
+        setTimeout(() => {
+            popup.style.opacity = '1';
+        }, 10);
+
+        // Hide popup after 2 seconds
+        setTimeout(() => {
+            popup.style.opacity = '0';
+            setTimeout(() => {
+                popup.classList.add('hidden');
+            }, 300);
+        }, 3000);
+
+        // Start floating animation
         envelopeContainer.style.animation = 'float 3s ease-in-out infinite';
     }, 1500); // 1500ms matches the fallIn animation duration
 });
