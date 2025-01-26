@@ -1,17 +1,10 @@
 body {
   background-color: #fae1dd;
   display: flex;
-  flex-direction: column;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-family: 'Brush Script MT', cursive;
-  margin-bottom: 50px; /* Reduced from 500px */
-  font-size: 60px;
 }
 
 #h-container {
@@ -143,7 +136,7 @@ input#flap {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
@@ -385,11 +378,12 @@ input#flap {
     font-family: 'Brush Script MT', cursive;
     color: #ff6b6b;
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 45px;  /* Made slightly larger */
 }
 
 #confirmation p {
-    font-size: 20px;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
     color: #ff8e53;
     margin-bottom: 20px;
 }
