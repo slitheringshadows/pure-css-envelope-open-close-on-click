@@ -39,12 +39,13 @@ input#flap {
 
 .envelope-shadow {
   position: absolute;
-  background-color: rgba(0,0,0,0.07);
   width: 320px;
   height: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  bottom: -20px;
-  left: 0;
+  top: 220px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .envelope-container {
@@ -77,10 +78,6 @@ input#flap {
   width: 320px;
   height: 200px;
   background-color: #ffcac2;
-}
-
-.envelope-back:before {
-  content: none;
 }
 
 .container {
