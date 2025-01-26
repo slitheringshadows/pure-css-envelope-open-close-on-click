@@ -6,12 +6,12 @@ document.getElementById('flap').addEventListener('change', function() {
         setTimeout(function() {
           nextButton.classList.add('show');
         }, 10); // Small delay to trigger the transition
-      }, 500); // 3 seconds delay
+      }, 100); // 3 seconds delay
     } else {
       nextButton.classList.remove('show');
       setTimeout(function() {
         nextButton.style.display = 'none';
-      }, 100); // Match this delay with the CSS transition duration
+      }, 500); // Match this delay with the CSS transition duration
     }
   });
   
@@ -34,7 +34,7 @@ document.getElementById('flap').addEventListener('change', function() {
         setTimeout(function() {
             planner.style.opacity = 1;
         }, 10);
-    }, 500);
+    }, 100);
   });
 
 document.getElementById('date-form').addEventListener('submit', function(e) {
