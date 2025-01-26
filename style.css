@@ -108,20 +108,20 @@ input#flap {
 }
 
 #planner {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 0;
+  padding: 25px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  display: none; /* Initially hidden */
-  opacity: 0; /* Initially transparent */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
-  position: absolute; /* Position it absolutely */
-  top: 50%; /* Center it vertically */
-  left: 50%; /* Center it horizontally */
-  transform: translate(-50%, -50%); /* Adjust for centering */
-  z-index: 5; /* Ensure the planner is below the button */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
 }
 
 #planner div {
