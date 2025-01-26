@@ -150,26 +150,22 @@ input#flap {
 }
 
 #planner h2 {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 32px;  /* Adjust size as needed */
+  font-family: "Poppins", serif;
+  font-style: normal;
+  font-size: 28px;  /* Adjust size as needed */
   color: #ff6b6b;   /* Using the same color scheme as the rest of the app */
   margin-bottom: 20px;
 }
 
-#planner p {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 24px;
-  color: #ff8e53;
-  margin-bottom: 20px;
-}
 
 #planner div {
   margin-top: 10px;
 }
 
 #planner label {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 20px;
+  font-family: "Poppins", serif;
+  font-style: normal;
+  font-size: 16px;
   display: block;
   margin-top: 25px;
   margin-bottom: 5px;
@@ -177,11 +173,12 @@ input#flap {
 
 #planner select, 
 #planner input[type="time"] {
-    font-family: 'Brush Script MT', cursive;
-    padding: 5px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  font-family: "Poppins", serif;
+  font-style: normal;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .heart {
