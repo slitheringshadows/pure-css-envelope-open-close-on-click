@@ -11,7 +11,7 @@ document.getElementById('flap').addEventListener('change', function() {
       nextButton.classList.remove('show');
       setTimeout(function() {
         nextButton.style.display = 'none';
-      }, 500); // Match this delay with the CSS transition duration
+      }, 100); // Match this delay with the CSS transition duration
     }
   });
   

@@ -43,6 +43,7 @@ input#flap {
   height: 220px;
   margin: 100px auto;
   cursor: pointer;
+  margin-bottom: 100px;
 }
 
 .envelope-back {
@@ -77,6 +78,10 @@ input#flap {
 }
 
 #next-button {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 10px;
   margin-top: 0;
   margin-bottom: 0;
@@ -84,7 +89,7 @@ input#flap {
   font-size: 16px;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;
+  transition: opacity 0.1s ease-in-out, background-color 0.3s, box-shadow 0.3s;
   background: linear-gradient(45deg, #ff6b6b, #ff8e53);
   color: white;
   border: none;
