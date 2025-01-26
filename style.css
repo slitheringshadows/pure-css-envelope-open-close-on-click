@@ -45,7 +45,7 @@ input#flap {
   position: relative;
   width: 320px;
   height: 220px;
-  animation: float 3s ease-in-out infinite;
+  animation: fallIn 1.5s ease-out forwards;
 }
 
 .envelope-shadow {
@@ -219,16 +219,33 @@ input#flap {
   }
 }
 
+@keyframes fallIn {
+    0% {
+        transform: translateY(-100vh) rotate(5deg);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(20px) rotate(-2deg);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
 @keyframes float {
-  0% {
-      transform: translateY(0px);
-  }
-  50% {
-      transform: translateY(-20px);
-  }
-  100% {
-      transform: translateY(0px);
-  }
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .card {
