@@ -368,24 +368,24 @@ input#flap {
 
 .confirmation-content {
     background-color: #fff;
-    padding: 30px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 #confirmation h2 {
-    font-family: 'Brush Script MT', cursive;
-    color: #ff6b6b;
-    margin-bottom: 20px;
-    font-size: 45px;  /* Made slightly larger */
+  font-family: 'Brush Script MT', cursive;
+  color: #ff6b6b;
+  margin: 20px auto;
+  font-size: 45px;
 }
 
 #confirmation p {
     font-family: 'Brush Script MT', cursive;
     font-size: 28px;
     color: #ff8e53;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .info-icon {

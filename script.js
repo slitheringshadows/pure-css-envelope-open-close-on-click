@@ -59,9 +59,9 @@ document.getElementById('date-form').addEventListener('submit', function(e) {
 
     // Prepare email parameters with formatted time
     const templateParams = {
-      to_email: 'raymundluzon@gmail.com',
-      date_type: dateType,
-      date_time: formattedTime
+        to_email: 'raymundluzon@gmail.com',
+        date_type: dateType,
+        date_time: formattedTime
     };
 
     // Send email using EmailJS
@@ -76,8 +76,11 @@ document.getElementById('date-form').addEventListener('submit', function(e) {
             setTimeout(() => {
                 planner.style.display = 'none';
                 
-                // Show confirmation message
+                // Show confirmation message with selected time
                 const confirmation = document.getElementById('confirmation');
+                const confirmationMessage = document.getElementById('confirmation-message');
+                confirmationMessage.textContent = `I'll call you at ${formattedTime}!`;
+                
                 confirmation.style.display = 'block';
                 setTimeout(() => {
                     confirmation.style.opacity = 1;

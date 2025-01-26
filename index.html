@@ -27,12 +27,7 @@
   <h2>Valentine's Date Planner</h2>
   <form id="date-form">
     <div>
-      <label for="date-type">
-        1. Date Type:
-        <span class="info-icon">ⓘ
-            <span class="tooltip">Due to our current situation, we only have 2 options for our date.</span>
-        </span>
-    </label>
+      <label for="date-type">1. Date Type:</label>
       <select id="date-type" required>
         <option value="">---------</option>
         <option value="Movie">Movie Date</option>
@@ -49,6 +44,7 @@
 <div id="confirmation" class="hidden">
     <div class="confirmation-content">
         <h2>It's a date! 💖</h2>
+        <p id="confirmation-message">I'll call you at </p>
         <p>Can't wait to spend time with you!</p>
         <div class="gif-container">
             <img src="./bears-kiss.gif" alt="Bears Kissing" class="confirmation-gif">
