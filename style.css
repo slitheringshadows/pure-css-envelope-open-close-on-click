@@ -45,7 +45,7 @@ input#flap {
   position: relative;
   width: 320px;
   height: 220px;
-  animation: fallIn 1.5s ease-out forwards;  /* Move falling animation here */
+  animation: float 3s ease-in-out infinite;
 }
 
 .envelope-shadow {
@@ -62,7 +62,7 @@ input#flap {
   position: relative;
   width: 320px;
   margin: 100px auto;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;  /* Add transition for smooth fade out */
 }
 
 .envelope-wrapper.hide {
@@ -99,7 +99,7 @@ input#flap {
   margin-bottom: 0;
   padding: 10px 20px;
   font-size: 20px;
-  font-family: "Brush Script MT";
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;
@@ -140,12 +140,10 @@ input#flap {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  width: 60%;  /* Set default width for mobile */
-  max-width: 400px;  /* Increased from default */
 }
 
 #planner h2 {
-  font-family: "Poppins", serif;
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
   font-style: normal;
   font-size: 28px;  /* Adjust size as needed */
   color: #ff6b6b;   /* Using the same color scheme as the rest of the app */
@@ -168,11 +166,10 @@ input#flap {
 
 #planner select, 
 #planner input[type="time"] {
-  width: 80%;  /* Make form elements wider */
-  max-width: 300px;
-  font-family: 'Brush Script MT', cursive;
-  padding: 8px;  /* Slightly increased padding */
-  font-size: 18px;
+  font-family: "Poppins", serif;
+  font-style: normal;
+  padding: 5px;
+  font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -246,7 +243,7 @@ input#flap {
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  font-family: "Brush Script MT";
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
   transition: .1s;
   z-index: 1;
   cursor: pointer;
@@ -298,18 +295,15 @@ input#flap {
   top: 0;  /* Adjusted to overlap properly */
   left: 0;
   transform-origin: top;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
   z-index: 4;  /* Ensure it's on top */
   cursor: pointer;
-  -webkit-transform-origin: top;  /* Add for Safari support */
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  backface-visibility: hidden;  /* Reduce flickering */
-  -webkit-backface-visibility: hidden;
 }
 
 #flap:checked + .flap {
   transform: rotateX(180deg);
-  -webkit-transform: rotateX(180deg);
 }
 
 #flap:checked ~ .card-front {
@@ -319,9 +313,8 @@ input#flap {
 #flap:checked ~ .card {
   z-index: 4;
   transform: translateY(-100px);
-  -webkit-transform: translateY(-100px);
-  transition: transform 0.3s ease-in-out;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 #submit-button {
@@ -329,7 +322,7 @@ input#flap {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 20px;
-  font-family: "Brush Script MT";
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
   cursor: pointer;
   opacity: 1;
   transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;
@@ -386,7 +379,7 @@ input#flap {
 }
 
 #confirmation h2 {
-    font-family: 'Brush Script MT', cursive;
+    font-family: "Brush Script MT", "Comic Sans MS", cursive;
     color: #ff6b6b;
     margin-bottom: 20px;
     font-size: 45px;  /* Made slightly larger */
@@ -398,36 +391,3 @@ input#flap {
     color: #ff8e53;
     margin-bottom: 20px;
 }
-
-@keyframes fallIn {
-    0% {
-        transform: translateY(-100vh) rotate(5deg);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(20px) rotate(-2deg);
-        opacity: 1;
-    }
-    80% {
-        transform: translateY(-10px) rotate(1deg);
-    }
-    100% {
-        transform: translateY(0) rotate(0);
-    }
-}
-
-/* Adjust width for larger screens */
-@media screen and (min-width: 768px) {
-    #planner {
-        width: 450px;  /* Fixed width for desktop */
-    }
-}
-
-/* Add more fallback fonts for better mobile support */
-.card, #planner h2, #planner label, #planner select, 
-#planner input[type="time"], #confirmation h2, #confirmation p,
-#next-button, #submit-button {
-    font-family: 'Brush Script MT', 'Dancing Script', 'Bradley Hand', cursive;
-}
-
-/* Add link to Google Fonts in your HTML head */
