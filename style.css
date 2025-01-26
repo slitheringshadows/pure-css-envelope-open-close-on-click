@@ -301,10 +301,15 @@ input#flap {
   transition: transform 0.3s ease-in-out;
   z-index: 4;  /* Ensure it's on top */
   cursor: pointer;
+  -webkit-transform-origin: top;  /* Add for Safari support */
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  backface-visibility: hidden;  /* Reduce flickering */
+  -webkit-backface-visibility: hidden;
 }
 
 #flap:checked + .flap {
   transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
 }
 
 #flap:checked ~ .card-front {
@@ -314,6 +319,9 @@ input#flap {
 #flap:checked ~ .card {
   z-index: 4;
   transform: translateY(-100px);
+  -webkit-transform: translateY(-100px);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
 }
 
 #submit-button {
@@ -414,3 +422,12 @@ input#flap {
         width: 450px;  /* Fixed width for desktop */
     }
 }
+
+/* Add more fallback fonts for better mobile support */
+.card, #planner h2, #planner label, #planner select, 
+#planner input[type="time"], #confirmation h2, #confirmation p,
+#next-button, #submit-button {
+    font-family: 'Brush Script MT', 'Dancing Script', 'Bradley Hand', cursive;
+}
+
+/* Add link to Google Fonts in your HTML head */
