@@ -408,10 +408,11 @@ input#flap {
 .info-icon {
     display: inline-block;
     color: #ff6b6b;
-    font-size: 18px;
+    font-size: 24px;  /* Increased from 18px */
     cursor: pointer;
-    margin-left: 5px;
+    margin-left: 8px;  /* Increased spacing */
     position: relative;
+    font-weight: bold;  /* Make it more visible */
 }
 
 .tooltip {
@@ -422,7 +423,7 @@ input#flap {
     text-align: center;
     padding: 10px;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     width: 200px;
     bottom: 100%;
     left: 50%;
@@ -432,6 +433,7 @@ input#flap {
     transition: opacity 0.3s;
     font-family: "Poppins", serif;
     z-index: 1000;
+    margin-bottom: 10px;
 }
 
 .info-icon:hover .tooltip {
