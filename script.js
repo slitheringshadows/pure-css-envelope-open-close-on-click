@@ -93,6 +93,15 @@ document.getElementById('date-form').addEventListener('submit', function(e) {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.envelope-container');
+  
+  // Add landed class after fall animation completes
+  setTimeout(() => {
+      container.classList.add('landed');
+  }, 1500); // Match this with your fallIn animation duration
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     const envelopeContainer = document.querySelector('.envelope-container');
     const popup = document.getElementById('popup-message');
     
@@ -115,4 +124,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start floating animation
         envelopeContainer.style.animation = 'float 3s ease-in-out infinite';
     }, 1500); // 1500ms matches the fallIn animation duration
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const flap = document.querySelector('#flap');
+    const card = document.querySelector('.card');
+    
+    flap.addEventListener('change', function() {
+        if (this.checked) {
+            // Add class when card is pulled out
+            setTimeout(() => {
+                card.classList.add('pulled-out');
+            }, 1500); // After pull-out animation completes
+        } else {
+            // Remove class after push-in animation completes
+            setTimeout(() => {
+                card.classList.remove('pulled-out');
+            }, 1200); // Match push-in animation duration
+        }
+    });
 });
