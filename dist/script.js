@@ -41,18 +41,26 @@ document.getElementById('date-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const dateType = document.getElementById('date-type').value;
-    const dateTime = document.getElementById('date-time').value;
+    const timeInput = document.getElementById('date-time').value;
     
-    if (!dateType || !dateTime) {
+    // Format time to include AM/PM
+    const timeObj = new Date(`2000/01/01 ${timeInput}`);
+    const formattedTime = timeObj.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+    });
+    
+    if (!dateType || !timeInput) {
         alert('Please select both a date type and time!');
         return;
     }
 
-    // Prepare email parameters
+    // Prepare email parameters with formatted time
     const templateParams = {
-        to_email: "raymundluzon@gmail.com",
-        date_type: dateType,
-        date_time: dateTime
+      to_email: 'raymundluzon@gmail.com',
+      date_type: dateType,
+      date_time: formattedTime
     };
 
     // Send email using EmailJS
