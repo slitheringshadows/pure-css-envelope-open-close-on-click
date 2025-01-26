@@ -62,7 +62,7 @@ input#flap {
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  font-family: "Brush Script MT";
+  font-family: 'Dancing Script', cursive;
   transition: none;
   transform: translateY(0);
   z-index: 2;
@@ -113,7 +113,7 @@ input#flap {
   margin-bottom: 0;
   padding: 10px 20px;
   font-size: 20px;
-  font-family: "Brush Script MT";
+  font-family: 'Dancing Script', cursive;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;
@@ -391,7 +391,7 @@ input#flap {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 20px;
-  font-family: "Brush Script MT";
+  font-family: 'Dancing Script', cursive;
   cursor: pointer;
   opacity: 1;
   transition: opacity 0.5s ease-in-out, background-color 0.3s, box-shadow 0.3s;
@@ -448,14 +448,14 @@ input#flap {
 }
 
 #confirmation h2 {
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Dancing Script', cursive;
   color: #ff6b6b;
   margin: 20px auto;
   font-size: 45px;
 }
 
 #confirmation p {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Dancing Script', cursive;
     font-size: 28px;
     color: #ff8e53;
     margin: 0;
